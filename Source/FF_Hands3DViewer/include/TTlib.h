@@ -15,18 +15,20 @@
 #include <math.h>
 #include <string.h>
 #include <iostream>
-
+#include <winuser.h>
 #include "pxchanddata.h"
 #include "Tree.h"
 
 using namespace std;
+
+const int minWheelMovement = 120;
 
 #define JOINT PXCHandData::JointData
 #define STRAIGHT_RATE_FING 0.85
 #define STRAIGHT_RATE_HAND 0.80
 
 #define FRAME_SPACING 2   // update HandDetail every that quantity Frames 
-#define GESTURE_SPACING 30   // 60FPS -> ~ 500 ms, pass that quantity Times after a Hand Gesture was be transmitted
+#define GESTURE_SPACING 25   // 60FPS -> ~ 500 ms, pass that quantity Times after a Hand Gesture was be transmitted
 #define MOUSE_SPACING 30   // 
 
 #define MOVE_DISTANCE_PER_PIXCEL 0.0001   // metric
@@ -61,7 +63,9 @@ public:
 		PULL_UP,
 		PULL_RIGHT,
 		PULL_DOWN,
-		PULL_LEFT
+		PULL_LEFT,
+		PULL_F5,
+		PULL_ESC
 	};
 
 	// public Methods
@@ -115,10 +119,13 @@ private:
 	int frameCount;
 	int gestureCount;
 	int mouseCount;
+	int isMouseScroll;
 	bool isMouseOn;
 	bool changeShape;
 	bool gestureDelay;
 	bool mouseDelayLeft;
+	bool isMouseDoubleClick;
+	
 };
 
 
@@ -164,6 +171,7 @@ void GenerateKey(int, BOOL);
 void MouseSetup(INPUT* );
 void MouseMove(INPUT *, int, int);
 void MouseClick(INPUT *);
-
+void DoubleClick(int x, int y);
+void MouseScroll(bool eve);
 #endif
 

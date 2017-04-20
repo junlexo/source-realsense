@@ -1,5 +1,5 @@
 #include "Tree.h"
-
+#include "pxchanddata.h"
 Node<PXCHandData::JointData>::Node(PXCHandData::JointData jointData)
 {
 	m_nodeValue = jointData;

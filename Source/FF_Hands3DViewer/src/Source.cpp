@@ -11,7 +11,12 @@ RssdkHandler* rssdkHandler;
 
 void releaseAll();
 
-int main(int argc, char** argv)
+int main(int argc, 
+	char** argv,
+	HINSTANCE hThisInstance,
+	HINSTANCE hPrevInstance,
+	LPSTR lpszArgument,
+	int nCmdShow)
 {
 	bool isFullHand = false;
 	if(argc == 2)

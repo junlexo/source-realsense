@@ -207,3 +207,54 @@ void MouseClick(INPUT *buffer)
 	SendInput(1, buffer, sizeof(INPUT));
 }
 
+void DoubleClick(int x, int y)
+{
+	const double XSCALEFACTOR = 65535 / (GetSystemMetrics(SM_CXSCREEN) - 1);
+	const double YSCALEFACTOR = 65535 / (GetSystemMetrics(SM_CYSCREEN) - 1);
+
+	POINT cursorPos;
+	GetCursorPos(&cursorPos);
+
+	double cx = cursorPos.x * XSCALEFACTOR;
+	double cy = cursorPos.y * YSCALEFACTOR;
+
+	double nx = x * XSCALEFACTOR;
+	double ny = y * YSCALEFACTOR;
+
+	INPUT Input = { 0 };
+	Input.type = INPUT_MOUSE;
+
+	Input.mi.dx = (LONG)nx;
+	Input.mi.dy = (LONG)ny;
+
+	Input.mi.dwFlags = MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP;
+
+	SendInput(1, &Input, sizeof(INPUT));
+	SendInput(1, &Input, sizeof(INPUT));
+
+	Input.mi.dx = (LONG)cx;
+	Input.mi.dy = (LONG)cy;
+
+	Input.mi.dwFlags = MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE;
+
+	SendInput(1, &Input, sizeof(INPUT));
+}
+
+void MouseScroll(bool eve) {
+	switch (eve)
+	{
+		//zoom in
+		case true:{
+			HWND foregroundWindow;
+			foregroundWindow = GetForegroundWindow();
+			mouse_event(MOUSEEVENTF_WHEEL, 0, 0, 8 * minWheelMovement, 0);
+		}; break;
+		//zoom out
+		case false: {
+			HWND foregroundWindow;
+			foregroundWindow = GetForegroundWindow();
+			mouse_event(MOUSEEVENTF_WHEEL, 0, 0, -8 * minWheelMovement, 0);
+		}; break;
+	}
+	Sleep(1000);
+}

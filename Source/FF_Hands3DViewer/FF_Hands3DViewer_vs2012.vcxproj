@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -22,41 +22,34 @@
     <ProjectName>FF_Hands3DViewer</ProjectName>
     <RootNamespace>FF_Hands3DViewer</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{F1EA1346-B69A-4BAA-B7CA-DE2571BD0006}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
-    
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <TargetName>$(ProjectName)_d</TargetName>
     <UseOfMfc>false</UseOfMfc>
-    
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
-    
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <TargetName>$(ProjectName)_d</TargetName>
     <UseOfMfc>false</UseOfMfc>
-    
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -98,9 +91,10 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
-      <ProgramDataBaseFileName></ProgramDataBaseFileName>
-      <ForcedIncludeFiles></ForcedIncludeFiles>
-      
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)$(ProjectName)_d.exe</OutputFile>
@@ -111,7 +105,8 @@
     <Link>
       <AdditionalDependencies>libpxc_d.lib;libpxcutils_d.lib;;glew32s.lib;freeglut_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName)_d.exe</OutputFile>
-      <ModuleDefinitionFile></ModuleDefinitionFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
       <AdditionalLibraryDirectories>../common/lib/$(PlatformName)/$(PlatformToolset);../../lib/$(PlatformName);$(RSSDK_DIR)/lib/$(PlatformName);$(RSSDK_DIR)/sample/common/lib/$(PlatformName)/$(PlatformToolset);../common/freeglut/$(PlatformToolset)/$(PlatformName);../common/glew/$(PlatformToolset)/$(PlatformName);$(RSSDK_DIR)/sample/common/freeglut/$(PlatformToolset)/$(PlatformName);$(RSSDK_DIR)/sample/common/glew/$(PlatformToolset)/$(PlatformName);;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
@@ -121,7 +116,8 @@
       <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
     </Link>
     <PostBuildEvent>
-      <Command></Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -133,9 +129,10 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
-      <ProgramDataBaseFileName></ProgramDataBaseFileName>
-      <ForcedIncludeFiles></ForcedIncludeFiles>
-      
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)$(ProjectName)_d.exe</OutputFile>
@@ -146,7 +143,8 @@
     <Link>
       <AdditionalDependencies>libpxc_d.lib;libpxcutils_d.lib;;glew32s.lib;freeglut_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName)_d.exe</OutputFile>
-      <ModuleDefinitionFile></ModuleDefinitionFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
       <AdditionalLibraryDirectories>../common/lib/$(PlatformName)/$(PlatformToolset);../../lib/$(PlatformName);$(RSSDK_DIR)/lib/$(PlatformName);$(RSSDK_DIR)/sample/common/lib/$(PlatformName)/$(PlatformToolset);../common/freeglut/$(PlatformToolset)/$(PlatformName);../common/glew/$(PlatformToolset)/$(PlatformName);$(RSSDK_DIR)/sample/common/freeglut/$(PlatformToolset)/$(PlatformName);$(RSSDK_DIR)/sample/common/glew/$(PlatformToolset)/$(PlatformName);;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
@@ -156,7 +154,8 @@
       <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
     </Link>
     <PostBuildEvent>
-      <Command></Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -167,9 +166,10 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
-      <ProgramDataBaseFileName></ProgramDataBaseFileName>
-      <ForcedIncludeFiles></ForcedIncludeFiles>
-      
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
@@ -181,7 +181,8 @@
       <AdditionalDependencies>libpxc.lib;libpxcutils.lib;;glew32s.lib;freeglut_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>../common/lib/$(PlatformName)/$(PlatformToolset);../../lib/$(PlatformName);$(RSSDK_DIR)/lib/$(PlatformName);$(RSSDK_DIR)/sample/common/lib/$(PlatformName)/$(PlatformToolset);../common/freeglut/$(PlatformToolset)/$(PlatformName);../common/glew/$(PlatformToolset)/$(PlatformName);$(RSSDK_DIR)/sample/common/freeglut/$(PlatformToolset)/$(PlatformName);$(RSSDK_DIR)/sample/common/glew/$(PlatformToolset)/$(PlatformName);;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
-      <ModuleDefinitionFile></ModuleDefinitionFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <LinkTimeCodeGeneration>
@@ -189,7 +190,8 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command></Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -200,9 +202,10 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
-      <ProgramDataBaseFileName></ProgramDataBaseFileName>
-      <ForcedIncludeFiles></ForcedIncludeFiles>
-      
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
@@ -214,7 +217,8 @@
       <AdditionalDependencies>libpxc.lib;libpxcutils.lib;;glew32s.lib;freeglut_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>../common/lib/$(PlatformName)/$(PlatformToolset);../../lib/$(PlatformName);$(RSSDK_DIR)/lib/$(PlatformName);$(RSSDK_DIR)/sample/common/lib/$(PlatformName)/$(PlatformToolset);../common/freeglut/$(PlatformToolset)/$(PlatformName);../common/glew/$(PlatformToolset)/$(PlatformName);$(RSSDK_DIR)/sample/common/freeglut/$(PlatformToolset)/$(PlatformName);$(RSSDK_DIR)/sample/common/glew/$(PlatformToolset)/$(PlatformName);;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
-      <ModuleDefinitionFile></ModuleDefinitionFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <LinkTimeCodeGeneration>
@@ -222,37 +226,37 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command></Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\timer.cpp"  />
-    <ClCompile Include="src\OpenGLView.cpp"  />
-    <ClCompile Include="src\HandsController.cpp"  />
-    <ClCompile Include="src\Tree.cpp"  />
-    <ClCompile Include="src\HandsModel.cpp"  />
-    <ClCompile Include="src\RssdkHandler.cpp"  />
-    <ClCompile Include="src\Source.cpp"  />
-    <ClCompile Include="src\camera.cpp"  />
+    <ClCompile Include="src\timer.cpp" />
+    <ClCompile Include="src\OpenGLView.cpp" />
+    <ClCompile Include="src\HandsController.cpp" />
+    <ClCompile Include="src\Tree.cpp" />
+    <ClCompile Include="src\HandsModel.cpp" />
+    <ClCompile Include="src\RssdkHandler.cpp" />
+    <ClCompile Include="src\Source.cpp" />
+    <ClCompile Include="src\camera.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\RssdkHandler.h"  />
-    <ClInclude Include="resource.h"  />
-    <ClInclude Include="include\IView.h"  />
-    <ClInclude Include="include\timer.h"  />
-    <ClInclude Include="include\OpenGLView.h"  />
-    <ClInclude Include="include\HandsController.h"  />
-    <ClInclude Include="include\HandsModel.h"  />
-    <ClInclude Include="include\Tree.h"  />
-    <ClInclude Include="include\Defs.h"  />
-    <ClInclude Include="include\Texture.hpp"  />
-    <ClInclude Include="include\camera.h"  />
+    <ClInclude Include="include\RssdkHandler.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="include\IView.h" />
+    <ClInclude Include="include\timer.h" />
+    <ClInclude Include="include\OpenGLView.h" />
+    <ClInclude Include="include\HandsController.h" />
+    <ClInclude Include="include\HandsModel.h" />
+    <ClInclude Include="include\Tree.h" />
+    <ClInclude Include="include\Defs.h" />
+    <ClInclude Include="include\Texture.hpp" />
+    <ClInclude Include="include\camera.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="FF_Hands3DViewer.rc"  />
+    <ResourceCompile Include="FF_Hands3DViewer.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-  
 </Project>

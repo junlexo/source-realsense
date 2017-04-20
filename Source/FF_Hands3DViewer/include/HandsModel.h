@@ -19,7 +19,7 @@ Copyright(c) 2011-2015 Intel Corporation. All Rights Reserved.
 #include "pxcsession.h"
 #include "pxcsensemanager.h"
 #include "PXCHandConfiguration.h"
-
+#include "pxccursordata.h"
 #include "Tree.h"
 
 

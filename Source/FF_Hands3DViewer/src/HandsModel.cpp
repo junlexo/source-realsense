@@ -1,5 +1,7 @@
 #include "HandsModel.h"
 #include "pxccursorconfiguration.h"
+#include "pxchandmodule.h"
+#include "pxchandcursormodule.h"
 #include "TTlib.h"
 HandDetail* hd;
 HandDetail::HandGesture hg;
@@ -395,11 +397,20 @@ void HandsModel::updateskeletonTree()
 				
 				// Thie begin
 				hd->updateHandDetail(&rootDataNode);
-				hg - hd->getHandGesture();
+				hg = hd->getHandGesture();
 				if (hg == HandDetail::PULL_LEFT)
+				{
+					cout << "Qua phai";
 					GenerateKey(VK_DOWN, FALSE);
+
+				}
 				else if (hg == HandDetail::PULL_RIGHT)
+				{
+					cout << "Qua trai";
 					GenerateKey(VK_UP, FALSE);
+					GenerateKey(VK_UP, FALSE);
+
+				}
 				// Thie
 
 				m_skeletonTree[side].setRoot(rootDataNode);

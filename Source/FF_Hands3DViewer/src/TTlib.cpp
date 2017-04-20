@@ -1,4 +1,4 @@
-// 2016  05 30
+﻿// 2016  05 30
 
 #include "TTlib.h"
 
@@ -51,8 +51,10 @@ HandDetail::HandDetail()
 	frameCount = 0;
 	gestureCount = 0;
 	mouseCount = 0;
+	isMouseScroll = 0;
 	gestureDelay = false;
 	mouseDelayLeft = false;
+	isMouseDoubleClick = false;
 }
 
 
@@ -85,7 +87,6 @@ bool HandDetail::gestureGate()
 	return true;
 }
 
-
 //===========================================================================//
 
 bool HandDetail::mouseGate()
@@ -114,9 +115,8 @@ void HandDetail::updateHandDetail(Node<PXCHandData::JointData>* rootDataNode)
 	// save previous Values
 	preMid0 = mid0; 
 
-	if (isMouseOn)  // MouseOn -> save the previous Index Tip Data
+	if (isMouseOn || isMouseScroll)  // MouseOn -> save the previous Index Tip Data
 		preIndexTip = indexTip;
-
 	// get New Fingers Values
 	wrist = rootDataNode->getNodeValue();
 	
@@ -224,7 +224,7 @@ void HandDetail::updateHandShape()
 		handShape = HandDetail::NONES;
 		break;
 	}
-
+	
 	// Special Shape -> Mouse Mode On
 	if (straightFingers == "index " || straightFingers == "thumb index ")
 	{
@@ -232,8 +232,36 @@ void HandDetail::updateHandShape()
 		isMouseOn = true;
 	}
 	else
-		isMouseOn = false;
+	{
+		if (i_handGesture == HandDetail::NONEG)
+		{
 
+			isMouseOn = false;
+
+			if (handShape == HandDetail::FIVE && isMouseScroll == 0)
+				isMouseScroll = 1;
+			else
+			if ((straightFingers == "thumb " || handShape == HandDetail::ZERO) && isMouseScroll == 0)
+			{
+				POINT cursorPosClick;
+				GetCursorPos(&cursorPosClick);
+				DoubleClick(cursorPosClick.x, cursorPosClick.y);
+				isMouseScroll = 2;
+			}
+			else
+			if ((straightFingers == "thumb " || handShape == HandDetail::ZERO) && isMouseScroll == 1)
+			{
+				//MouseScroll(true);
+				isMouseScroll = 0;
+			}
+			else
+			if (handShape == HandDetail::FIVE && isMouseScroll == 2)
+			{
+				GenerateKey(VK_F5, FALSE);
+				isMouseScroll = 0;
+			}
+		}
+	}
 	// detect Difference
 	if (i_handShape == handShape)
 		changeShape = false;
@@ -397,7 +425,7 @@ void HandDetail::updateCursor()
 		MouseMove(&mouseInput, x, y);
 }
 
-
+ 
 //===========================================================================//
 
 bool HandDetail::getChangeShape()
@@ -506,8 +534,10 @@ HandDetail::HandGesture HandDetail::getHandGesture()
 
 	HandGesture hG = i_handGesture;
 	i_handGesture = HandDetail::NONEG;
-
+	if (isMouseOn || straightFingers == "" || straightFingers == "thumb ")
+		return HandDetail::NONEG;
 	return hG;
+	
 }
 
 

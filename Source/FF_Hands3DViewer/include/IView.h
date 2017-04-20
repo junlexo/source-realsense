@@ -13,7 +13,7 @@ Copyright(c) 2011-2015 Intel Corporation. All Rights Reserved.
 #define	IVIEW_H
 
 #include "pxcsensemanager.h"
-
+#include "pxchanddata.h"
 #include "Tree.h"
 
 namespace ModelViewController
